@@ -1,37 +1,32 @@
-## Dictum-SM
+## Dictum-SM (DSM)
+Extensible framework and application for managing everything with GitOps.
 
-You can use the [editor on GitHub](https://github.com/Dictum-SM/dictum-sm.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### Declare all the things
+Centrally manage everything from one source including:
+- Kubernetes
+- Terraform
+- Ansible  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Git Native
 
-### Markdown
+Written in Bash, the DSM is purpose built to be added to any git repo as a submodule for easy versioning and extensibility.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The DSM is initialized similarly to git, with a `.state` file located at the git repo root. This `.state` file holds an index of all configurations to be applied to a target environment contained within the git repo.
 
-```markdown
-Syntax highlighted code block
+### Portable
+Run it at home or from a workflow automation, the DSM should always produce the same output defined within the `.state` file by configuring an environment with ony resources defined within the git repo. 
 
-# Header 1
-## Header 2
-### Header 3
+### Easy
+Apply a resource by creating a key/value pair in the `.state` file and running the DSM. 
 
-- Bulleted
-- List
+Does the resource have a dependency? Add another key/value pair to the `.state` file that executes a health check between applying configs.
 
-1. Numbered
-2. List
+Update the environment with a change to a configuration by running the DSM again.
 
-**Bold** and _Italic_ and `Code` text
+Delete a resource by removing it fom the `.state` file and running the DSM again.
 
-[Link](url) and ![Image](src)
-```
+Add any combination of configurations (ie. kubectl/helm/teraform/ansible-playbooks) and helper utilities (health checking, credential retrieval, other preparation) to achieve the desired state of an environment. 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Dictum-SM/dictum-sm.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
