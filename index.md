@@ -1,4 +1,4 @@
-## Dictum-SM (DSM)
+## Dictum State Machine (DSM)
 Extensible framework and application for managing everything with GitOps.
 
 ### Declare all the things
